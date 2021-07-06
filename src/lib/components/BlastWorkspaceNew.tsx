@@ -10,7 +10,11 @@ import { Props as FormProps } from '@veupathdb/wdk-client/lib/Views/Question/Def
 import { BlastForm } from './BlastForm';
 
 export function BlastWorkspaceNew(
-  props: RouteComponentProps<{}, StaticContext, ParameterValues | undefined>
+  props: RouteComponentProps<
+    {},
+    StaticContext,
+    { parameterValues?: ParameterValues }
+  >
 ) {
   const FormComponent = useCallback(
     (props: FormProps) => <BlastForm {...props} isMultiBlast />,
@@ -34,7 +38,7 @@ export function BlastWorkspaceNew(
         autoRun: false,
         prepopulateWithLastParamValues: false,
         submitButtonText: 'BLAST',
-        initialParamData: props.location.state ?? undefined,
+        initialParamData: props.location?.state?.parameterValues ?? undefined,
         FormComponent,
       }}
       defaultComponent={QuestionController}
