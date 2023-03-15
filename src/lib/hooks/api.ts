@@ -47,8 +47,10 @@ const makeErrorReporter = once(function (
     wdkService.submitErrorIfNot500(
       error instanceof Error ? error : new Error(error)
     );
-
-    dispatch(notifyUnhandledError(error));
+    // Errors from this API are technically not unhandled,
+    // since all responses get tagged, forcing the consumer
+    // to deal with them.
+    // dispatch(notifyUnhandledError(error));
   };
 });
 
