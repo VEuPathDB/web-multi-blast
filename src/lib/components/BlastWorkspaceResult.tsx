@@ -194,7 +194,7 @@ function BlastRerunError(props: Props) {
           <span className="InlineHeader">Status:</span> error
         </p>
         <p>
-          We were unable to rereun your blast job due to a server error.{' '}
+          We were unable to rerun your blast job due to a server error.{' '}
           <Link to="/contact-us" target="_blank">
             Contact us
           </Link>{' '}
